@@ -10,7 +10,16 @@
   <div class="container">
     <div class="clue-box">
       <h2>Clue 2</h2>
-      <p>What is the capital of France?</p>
+      <div class="poem">
+        <p>Amidst the hustle where papers and pens convene,<br>
+          I am a haven where ideas and ink meet unseen.<br>
+          My name echoes tradition in a place quite quaint,<br>
+          Where every jot and doodle is given a chance.<br>
+          In a corner of commerce, I stand with grace,<br>
+          Offering tools for both study and creative space.<br>
+          What is this realm where all things write,<br>
+          With a name that blends with cultural light?</p>
+      </div>
       <input type="text" id="answer2" placeholder="Enter your answer">
       <button onclick="checkAnswer()">Submit</button>
       <p id="message2" class="message"></p>
@@ -18,10 +27,11 @@
   </div>
 
   <script>
-    const correctAnswer = "paris";
+    const correctAnswer = "balaji"; 
 
     function checkAnswer() {
       const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+      //const correctAnswer = atob(encodedAnswer);
 
       if (userAnswer === correctAnswer) {
         document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";

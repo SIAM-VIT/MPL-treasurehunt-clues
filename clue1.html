@@ -10,7 +10,9 @@
   <div class="container">
     <div class="clue-box">
       <h2>Clue 1</h2>
-      <p>What is 2 + 2?</p>
+      <div class="clue-image">
+        <img src="assets/img1.png" alt="Clue 1 Image" class="clue-img">
+      </div>
       <input type="text" id="answer1" placeholder="Enter your answer">
       <button onclick="checkAnswer()">Submit</button>
       <p id="message1" class="message"></p>
@@ -18,8 +20,7 @@
   </div>
 
   <script>
-    // Correct answer
-    const correctAnswer = "4";
+    const correctAnswer = "20";
 
     function checkAnswer() {
       const userAnswer = document.getElementById('answer1').value.trim();
