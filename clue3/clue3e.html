@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clue 2</title>
-  <link rel="stylesheet" href="../styles.css">
-</head>
-<body>
-  
-  <div class="container">
-    <div class="clue-box">
-      <h2>Clue 3</h2>
-      <div class="clue-image">
-        <img src="../assets/img3.png" alt="Clue 3 Image" class="clue-img">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clue 3</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="clue-box">
+        <h1>Clue 3</h1>
+        <div class="clue-image">
+          <p class="poem1">Observe the image and find the missing number.</p>
+          <img src="../assets/img3.png" alt="Clue 3 Image" class="clue-img" />
+        </div>
+
+        <input type="text" id="answer2" placeholder="Enter your answer" />
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
+        <p id="message2" class="message"></p>
       </div>
-     
-      <input type="text" id="answer2" placeholder="Enter your answer">
-      <button onclick="checkAnswer()">Submit</button>
-      <p id="message2" class="message"></p>
     </div>
-  </div>
 
-  <script>
-    const correctAnswer = "48";
+    <script>
+      const correctAnswer = "48";
 
-    function checkAnswer() {
-      const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
-      //const correctAnswer = atob(encodedAnswer);
+      function checkAnswer() {
+        const userAnswer = document
+          .getElementById("answer2")
+          .value.toLowerCase()
+          .trim();
+        //const correctAnswer = atob(encodedAnswer);
 
-      if (userAnswer === correctAnswer.toLowerCase()) {
-        document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";
-      } else {
-        document.getElementById('message2').textContent = "Wrong answer. Try again!";
+        if (userAnswer === correctAnswer.toLowerCase()) {
+          document.getElementById("message2").textContent =
+            "Correct! Advance to {{location}} for your next clue";
+        } else {
+          document.getElementById("message2").textContent =
+            "Wrong answer. Try again!";
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
