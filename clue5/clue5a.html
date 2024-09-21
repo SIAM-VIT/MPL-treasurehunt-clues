@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 2</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clue-box">
+      <h2>Clue 5</h2>
+      <div class="poem">
+        <p>a = year in which a woman won a Nobel Prize for the first time <br>
+          b = Treaty of perpetual peace signed in moscow this year<br>
+          a^3- (b^3 + 691278)= a number<br>
+          Now connect the numbers to form a meaningful word using Numeric Cipher.
+        
+          </p>
+      </div>
+      <input type="text" id="answer2" placeholder="Enter your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="message2" class="message"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswer = "titanic"; 
+
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+      //const correctAnswer = atob(encodedAnswer);
+
+      if (userAnswer === correctAnswer.toLowerCase()) {
+        document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";
+      } else {
+        document.getElementById('message2').textContent = "Wrong answer. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>

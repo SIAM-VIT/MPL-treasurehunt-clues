@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 2</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clue-box">
+      <h2>Clue 2</h2>
+      <div class="poem">
+        <p>"In front of the wooden realm I stand,<br>
+          Rooted in place, not by my hand.<br>
+          Crowds gather near, both day and night,<br>
+          As scents of chemicals fill my sight.<br>
+          Yet sweet rewards soften the air,<br>
+          With ice cream and juice, I do not despair.<br>
+          Events and gatherings make my purpose clear,<br>
+          What am I, standing patiently here?<br>
+          </p>
+      </div>
+      <input type="text" id="answer2" placeholder="Enter your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="message2" class="message"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswer = "tank"; 
+
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+      //const correctAnswer = atob(encodedAnswer);
+
+      if (userAnswer === correctAnswer.toLowerCase()) {
+        document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";
+      } else {
+        document.getElementById('message2').textContent = "Wrong answer. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>

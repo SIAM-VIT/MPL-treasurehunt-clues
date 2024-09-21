@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 2</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clue-box">
+      <h2>Clue 2</h2>
+      <div class="poem">
+        <p>I hold the future in orderly rows, <br>
+          Yet I am bound by what everyone knows.<br>
+          I guide the flow of both work and play,<br>
+          Without my plan, chaos would sway.<br>
+          I'm seen in pairs, side by side,<br>
+          I'm seen by students, workers, and more,<br>
+          A silent commander, behind every door.<br>
+          What am I, this structure of hours,<br>
+          That shapes your day with unseen powers?<br>
+          </p>
+      </div>
+      <input type="text" id="answer2" placeholder="Enter your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <p id="message2" class="message"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswer = "Technology Tower"; 
+
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+      //const correctAnswer = atob(encodedAnswer);
+
+      if (userAnswer === correctAnswer.toLowerCase()) {
+        document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";
+      } else {
+        document.getElementById('message2').textContent = "Wrong answer. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>
