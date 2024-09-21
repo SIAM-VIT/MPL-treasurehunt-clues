@@ -9,19 +9,15 @@
 <body>
   <div class="container">
     <div class="clue-box">
-      <h2>Clue 2</h2>
+      <h2>Clue 3</h2>
       <div class="poem">
-        <p>I sit near a mind that sparked many a light,<br>
-          Inventive, resourceful, a genius of flight.<br>
-          Where machines and motors took their first stand,<br>
-          A pioneer's legacy across the land.<br>
-          Yet just a stone's throw from this man of fame,<br>
-          I offer fuel of a different name.<br>
-          Not for engines or gears, but for the soul,<br>
-          Where minds take a break, and bellies find their goal.<br>
-          What am I, this place of rest,<br>
-          Near a creator whose work was the best?<br> 
-          </p>
+        <p>Observe the pattern & find the missing number.<br>
+          8 4 9 = 363172<br>
+          5 2 8 = 161240<br>
+          7 6 3 = 185721<br>
+          9 5 7 = 354363<br>
+          4 8 2 = ?
+         </p>
       </div>
       <input type="text" id="answer2" placeholder="Enter your answer">
       <button onclick="checkAnswer()">Submit</button>
@@ -30,7 +26,7 @@
   </div>
 
   <script>
-    const correctAnswer = "GDN Main Canteen"; 
+    const correctAnswer = "167808"; 
 
     function checkAnswer() {
       const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();

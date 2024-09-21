@@ -9,18 +9,13 @@
 <body>
   <div class="container">
     <div class="clue-box">
-      <h2>Clue 2</h2>
+      <h2>Clue 3</h2>
       <div class="poem">
-        <p>I sit near a mind that sparked many a light,<br>
-          Inventive, resourceful, a genius of flight.<br>
-          Where machines and motors took their first stand,<br>
-          A pioneer's legacy across the land.<br>
-          Yet just a stone's throw from this man of fame,<br>
-          I offer fuel of a different name.<br>
-          Not for engines or gears, but for the soul,<br>
-          Where minds take a break, and bellies find their goal.<br>
-          What am I, this place of rest,<br>
-          Near a creator whose work was the best?<br> 
+        <p>Using the given numbers without  repetition , fill the given
+          equation. <br>
+          73,89,53,12,24,67,28,49,11 <br>
+          ( __ x __ )- (__) + (__) + (__) = 688 <br>
+          Give the integers seperated by commas        
           </p>
       </div>
       <input type="text" id="answer2" placeholder="Enter your answer">
@@ -30,10 +25,10 @@
   </div>
 
   <script>
-    const correctAnswer = "GDN Main Canteen"; 
+    const correctAnswer = "53,12,49,28,73"; 
 
     function checkAnswer() {
-      const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
+      const userAnswer = document.getElementById('answer2').value.toLowerCase();
       //const correctAnswer = atob(encodedAnswer);
 
       if (userAnswer === correctAnswer.toLowerCase()) {
