@@ -33,7 +33,7 @@
       const userAnswer = document.getElementById('answer2').value.toLowerCase().trim();
       //const correctAnswer = atob(encodedAnswer);
 
-      if (userAnswer === correctAnswer) {
+      if (userAnswer === correctAnswer.toLowerCase()) {
         document.getElementById('message2').textContent = "Correct! Advance to {{location}} for your next clue";
       } else {
         document.getElementById('message2').textContent = "Wrong answer. Try again!";
