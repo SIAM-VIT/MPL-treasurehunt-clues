@@ -10,26 +10,18 @@
     <div class="container">
       <div class="clue-box">
         <h1>Clue 2</h1>
-        <div class="poem">
-          <p>
-            I shape the future, yet am crafted from the past,<br />
-            With parts from many, to make one whole at last.<br />
-            I take what's broken, twisted, or torn,<br />
-            And give it life anew, as if reborn.<br />
-            From cells to tissues, I weave and mold,<br />
-            A living puzzle, intricate and bold.<br />
-            What am I, this art of life renewed,<br />
-            Where science and biology fuse?<br />
-          </p>
+        <div class="clue-image">
+          <p class="poem1">Observe the pattern and find the missing number.</p>
+          <img src="../assets/img1.png" alt="Clue 1 Image" class="clue-img" />
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "HOME";
+      const correctAnswer = "20";
 
       function checkAnswer() {
         const userAnswer = document

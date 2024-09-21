@@ -10,28 +10,23 @@
     <div class="container">
       <div class="clue-box">
         <h1>Clue 2</h1>
-        <div class="poem">
+        <div class="poem1">
           <p>
-            Where minds are sharpened and ideas take flight,<br />
-            Just steps away from the realm of insight.<br />
-            A place of games, but not of chance,<br />
-            Where giants leap, and their spirits dance.<br />
-            Marked by lines but no words are said,<br />
-            Yet strategy is drawn in every thread.<br />
-            It's near a place where codes are cracked,<br />
-            But here, it's about the bounce and the tact.<br />
-            Where am I, where intellect and sport align,<br />
-            Close to the heart where scholars shine?<br />
+            Observe the pattern & find the missing number. <br />
+            4 7 8 = 442 <br />
+            1 3 9 = 071<br />
+            2 5 6 = 224<br />
+            6 9 8 = ?
           </p>
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "CS Hall";
+      const correctAnswer = "742";
 
       function checkAnswer() {
         const userAnswer = document
