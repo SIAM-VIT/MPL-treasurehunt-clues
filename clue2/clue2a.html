@@ -10,26 +10,24 @@
     <div class="container">
       <div class="clue-box">
         <h1>Clue 2</h1>
-        <div class="poem">
+        <div class="poem1">
           <p>
-            Amidst the hustle where papers and pens convene,<br />
-            I am a haven where ideas and ink meet unseen.<br />
-            My name echoes tradition in a place quite quaint,<br />
-            Where every jot and doodle is given a chance.<br />
-            In a corner of commerce, I stand with grace,<br />
-            Offering tools for both study and creative space.<br />
-            What is this realm where all things write,<br />
-            With a name that blends with cultural light?
+            Observe the pattern & find the missing number.<br />
+            8 4 9 = 363172<br />
+            5 2 8 = 161240<br />
+            7 6 3 = 185721<br />
+            9 5 7 = 354363<br />
+            4 8 2 = ?
           </p>
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "balaji";
+      const correctAnswer = "167808";
 
       function checkAnswer() {
         const userAnswer = document
@@ -38,7 +36,7 @@
           .trim();
         //const correctAnswer = atob(encodedAnswer);
 
-        if (userAnswer.includes(correctAnswer.toLowerCase())) {
+        if (userAnswer === correctAnswer.toLowerCase()) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {

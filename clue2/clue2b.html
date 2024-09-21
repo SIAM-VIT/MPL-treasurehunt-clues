@@ -10,33 +10,31 @@
     <div class="container">
       <div class="clue-box">
         <h1>Clue 2</h1>
-        <div class="poem">
+        <div class="poem1">
           <p>
-            I hold the future in orderly rows, <br />
-            Yet I am bound by what everyone knows.<br />
-            I guide the flow of both work and play,<br />
-            Without my plan, chaos would sway.<br />
-            I'm seen in pairs, side by side,<br />
-            I'm seen by students, workers, and more,<br />
-            A silent commander, behind every door.<br />
-            What am I, this structure of hours,<br />
-            That shapes your day with unseen powers?<br />
+            Using the given numbers without repetition , fill the given
+            equation. <br />
+            <br />
+            {73, 89, 53, 12, 24, 67, 28, 49, 11} <br />
+            <br />
+            ( __ x __ )- (__) + (__) + (__) = 688 <br />
+            <br />
+            Type the integers in the answer box seperated by spaces.
           </p>
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "Technology Tower";
+      const correctAnswer = "53 12 49 28 73";
 
       function checkAnswer() {
         const userAnswer = document
           .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
+          .value.toLowerCase();
         //const correctAnswer = atob(encodedAnswer);
 
         if (userAnswer === correctAnswer.toLowerCase()) {

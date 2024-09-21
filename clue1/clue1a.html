@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clue 2</title>
+    <title>Clue 1</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="clue-box">
-        <h1>Clue 2</h1>
+        <h1>Clue 1</h1>
         <div class="poem">
           <p>
-            "In front of the wooden realm I stand,<br />
-            Rooted in place, not by my hand.<br />
-            Crowds gather near, both day and night,<br />
-            As scents of chemicals fill my sight.<br />
-            Yet sweet rewards soften the air,<br />
-            With ice cream and juice, I do not despair.<br />
-            Events and gatherings make my purpose clear,<br />
-            What am I, standing patiently here?<br />
+            Amidst the hustle where papers and pens convene,<br />
+            I am a haven where ideas and ink meet unseen.<br />
+            My name echoes tradition in a place quite quaint,<br />
+            Where every jot and doodle is given a chance.<br />
+            In a corner of commerce, I stand with grace,<br />
+            Offering tools for both study and creative space.<br />
+            What is this realm where all things write,<br />
+            With a name that blends with cultural light?
           </p>
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
@@ -29,7 +29,7 @@
     </div>
 
     <script>
-      const correctAnswer = "tank";
+      const correctAnswer = "balaji";
 
       function checkAnswer() {
         const userAnswer = document
@@ -38,7 +38,7 @@
           .trim();
         //const correctAnswer = atob(encodedAnswer);
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
+        if (userAnswer.includes(correctAnswer.toLowerCase())) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {
