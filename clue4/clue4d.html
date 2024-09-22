@@ -35,26 +35,33 @@
     <script>
       async function checkAnswer() {
         const userAnswer = document.getElementById("answer2").value.trim();
-        
-        const response = await fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            question_number: 19,
-            answer: userAnswer
-          })
-        });
 
-        const result = await response.json();
+        const response = await fetch(
+          "https://mpl-treasurehunt-be.onrender.com/checkAnswer",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              question_number: 19,
+              answer: userAnswer,
+            }),
+          }
+        );
 
-        if (result.correct) {
-          document.getElementById("message2").textContent =
-            "Correct! Advance to {{location}} for your next clue";
+        if (response.ok) {
+          const data = await response.json();
+          if (data.correct) {
+            document.getElementById("message2").textContent =
+              "Correct! Advance to {{location}} for your next clue";
+          } else {
+            document.getElementById("message2").textContent =
+              "Wrong answer. Try again!";
+          }
         } else {
           document.getElementById("message2").textContent =
-            "Wrong answer. Try again!";
+            "Error checking answer. Please try again.";
         }
       }
     </script>

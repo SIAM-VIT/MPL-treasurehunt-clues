@@ -32,37 +32,35 @@
 
     <script>
       function checkAnswer() {
-        const userAnswer = document
-          .getElementById("answer1")
-          .value.trim();
+        const userAnswer = document.getElementById("answer1").value.trim();
 
         const questionData = {
           question_number: 4,
-          answer: userAnswer
+          answer: userAnswer,
         };
 
-        fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
-          method: 'POST',
+        fetch("https://mpl-treasurehunt-be.onrender.com/checkAnswer", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(questionData)
+          body: JSON.stringify(questionData),
         })
-        .then(response => response.json())
-        .then(data => {
-          if (data.correct) {
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.correct) {
+              document.getElementById("message1").textContent =
+                "Correct! Advance to {{location}} for your next clue";
+            } else {
+              document.getElementById("message1").textContent =
+                "Wrong answer. Try again!";
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
             document.getElementById("message1").textContent =
-              "Correct! Advance to {{location}} for your next clue";
-          } else {
-            document.getElementById("message1").textContent =
-              "Wrong answer. Try again!";
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          document.getElementById("message1").textContent =
-            "An error occurred. Please try again.";
-        });
+              "Error checking answer. Please try again.";
+          });
       }
     </script>
   </body>
