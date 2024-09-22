@@ -12,13 +12,13 @@
         <h1>Clue 4</h1>
         <div class="poem">
           <p>
-            x= Year the Third Battle of Panipat took place. <br />
+            x = Year the Third Battle of Panipat took place. <br />
             <br />
-            y= Year the Great Fire took place in London.<br />
+            y = Year the Great Fire took place in London.<br />
             <br />
-            z= Year the Battle of Kulikovo took place.<br />
+            z = Year the Battle of Kulikovo took place.<br />
             <br />
-            x^3-y^3-(z/2)^3+4680400=NUMBER<br />
+            x^3 - y^3 - (z/2)^3 + 4680400 = NUMBER<br />
             <br />
             Now connect the numbers to form a meaningful word using Numeric
             Cipher.
@@ -31,16 +31,23 @@
     </div>
 
     <script>
-      const correctAnswer = "Empire";
+      async function checkAnswer() {
+        const userAnswer = document.getElementById("answer2").value.trim();
+        
+        const response = await fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            question_number: 18,
+            answer: userAnswer
+          })
+        });
 
-      function checkAnswer() {
-        const userAnswer = document
-          .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+        const result = await response.json();
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
+        if (result.correct) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {

@@ -17,7 +17,7 @@
             <br />
             b = Treaty of perpetual peace signed in Moscow this year.<br />
             <br />
-            a^3- (b^3 + 691278)= A number<br />
+            a^3 - (b^3 + 691278) = A number<br />
             <br />
             Now connect the numbers to form a meaningful word using Numeric
             Cipher.
@@ -30,16 +30,23 @@
     </div>
 
     <script>
-      const correctAnswer = "titanic";
+      async function checkAnswer() {
+        const userAnswer = document.getElementById("answer2").value.trim();
+        
+        const response = await fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            question_number: 16,
+            answer: userAnswer
+          })
+        });
 
-      function checkAnswer() {
-        const userAnswer = document
-          .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+        const result = await response.json();
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
+        if (result.correct) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {

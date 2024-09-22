@@ -18,7 +18,7 @@
             <br />
             c=integer that has binary code 101010.<br />
             <br />
-            a^2+(b+c)^2-536200=NUMBER<br />
+            a^2 + (b + c)^2 - 536200 = NUMBER<br />
             <br />
             Now connect the numbers to form a meaningful word/letter using
             Numeric Cipher.
@@ -31,16 +31,23 @@
     </div>
 
     <script>
-      const correctAnswer = "a";
+      async function checkAnswer() {
+        const userAnswer = document.getElementById("answer2").value.trim();
 
-      function checkAnswer() {
-        const userAnswer = document
-          .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+        const response = await fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            question_number: 20,
+            answer: userAnswer
+          })
+        });
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
+        const result = await response.json();
+
+        if (result.correct) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {
