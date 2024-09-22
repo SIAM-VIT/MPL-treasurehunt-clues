@@ -21,16 +21,25 @@
     </div>
 
     <script>
-      const correctAnswer = "20";
-
-      function checkAnswer() {
+      async function checkAnswer() {
         const userAnswer = document
           .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+          .value.trim();
+        
+        const response = await fetch('https://mpl-treasurehunt-be.onrender.com/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            question_number: 9,
+            answer: userAnswer
+          })
+        });
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
+        const result = await response.json();
+
+        if (result.correct) {
           document.getElementById("message2").textContent =
             "Correct! Advance to {{location}} for your next clue";
         } else {
