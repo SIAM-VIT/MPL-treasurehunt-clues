@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <div class="clue-box">
-        <h1>Clue 1</h1>
+        <h1>Clue 3</h1>
         <div class="poem">
           <p>
             I shape the future, yet am crafted from the past,<br />
@@ -22,29 +22,45 @@
             Where science and biology fuse?<br />
           </p>
         </div>
-        <input type="text" id="answer2" placeholder="Enter your answer" />
+        <input type="text" id="answer3" placeholder="Enter your answer" />
         <button onclick="checkAnswer()">Submit</button>
-        <p id="message2" class="message"></p>
+        <p id="message3" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "HOME";
-
       function checkAnswer() {
         const userAnswer = document
-          .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+          .getElementById("answer3")
+          .value.trim();
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
-          document.getElementById("message2").textContent =
-            "Correct! Advance to {{location}} for your next clue";
-        } else {
-          document.getElementById("message2").textContent =
-            "Wrong answer. Try again!";
-        }
+        const questionData = {
+          question_number: 3,
+          answer: userAnswer
+        };
+
+        fetch('https://mpl-be-production.up.railway.app/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(questionData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.correct) {
+            document.getElementById("message3").textContent =
+              "Correct! Advance to {{location}} for your next clue";
+          } else {
+            document.getElementById("message3").textContent =
+              "Wrong answer. Try again!";
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById("message3").textContent =
+            "An error occurred. Please try again.";
+        });
       }
     </script>
   </body>

@@ -24,29 +24,45 @@
             Close to the heart where scholars shine?<br />
           </p>
         </div>
-        <input type="text" id="answer2" placeholder="Enter your answer" />
+        <input type="text" id="answer1" placeholder="Enter your answer" />
         <button onclick="checkAnswer()">Submit</button>
-        <p id="message2" class="message"></p>
+        <p id="message1" class="message"></p>
       </div>
     </div>
 
     <script>
-      const correctAnswer = "CS Hall";
-
       function checkAnswer() {
         const userAnswer = document
-          .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+          .getElementById("answer1")
+          .value.trim();
 
-        if (userAnswer === correctAnswer.toLowerCase()) {
-          document.getElementById("message2").textContent =
-            "Correct! Advance to {{location}} for your next clue";
-        } else {
-          document.getElementById("message2").textContent =
-            "Wrong answer. Try again!";
-        }
+        const questionData = {
+          question_number: 4,
+          answer: userAnswer
+        };
+
+        fetch('https://mpl-be-production.up.railway.app/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(questionData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.correct) {
+            document.getElementById("message1").textContent =
+              "Correct! Advance to {{location}} for your next clue";
+          } else {
+            document.getElementById("message1").textContent =
+              "Wrong answer. Try again!";
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById("message1").textContent =
+            "An error occurred. Please try again.";
+        });
       }
     </script>
   </body>
