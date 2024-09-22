@@ -29,21 +29,35 @@
     </div>
 
     <script>
-      const correctAnswer = "balaji";
-
-      function checkAnswer() {
+      async function checkAnswer() {
         const userAnswer = document
           .getElementById("answer2")
-          .value.toLowerCase()
-          .trim();
-        //const correctAnswer = atob(encodedAnswer);
+          .value.trim();
+        const questionNumber = 1; // Adjust this as needed
 
-        if (userAnswer.includes(correctAnswer.toLowerCase())) {
-          document.getElementById("message2").textContent =
-            "Correct! Advance to {{location}} for your next clue";
+        const response = await fetch('https://mpl-be-production.up.railway.app/checkAnswer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            question_number: questionNumber,
+            answer: userAnswer
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.correct) {
+            document.getElementById("message2").textContent =
+              "Correct! Advance to {{location}} for your next clue";
+          } else {
+            document.getElementById("message2").textContent =
+              "Wrong answer. Try again!";
+          }
         } else {
           document.getElementById("message2").textContent =
-            "Wrong answer. Try again!";
+            "Error checking answer. Please try again.";
         }
       }
     </script>
