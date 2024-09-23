@@ -1,31 +1,24 @@
-<!-- Clue 1f -->
+<!-- Clue 2e -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clue 1</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Clue 2</title>
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="clue-box">
-        <h1>Clue 1</h1>
-        <div class="poem">
-          <p>
-            "In front of the wooden realm I stand,<br />
-            Rooted in place, not by my hand.<br />
-            Crowds gather near, both day and night,<br />
-            As scents of chemicals fill my sight.<br />
-            Yet sweet rewards soften the air,<br />
-            With ice cream and juice, I do not despair.<br />
-            Events and gatherings make my purpose clear,<br />
-            What am I, standing patiently here?<br />
-          </p>
+        <h1>Clue 2</h1>
+        <div class="clue-image">
+          <p class="poem1">Observe the image and find the missing number.</p>
+          <img src="../assets/img3.png" alt="Clue 3 Image" class="clue-img" />
         </div>
+
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
@@ -42,7 +35,7 @@
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              question_number: 6,
+              question_number: 11,
               answer: userAnswer,
             }),
           }

@@ -1,31 +1,35 @@
-<!-- Clue 1f -->
+<!-- Clue 4d -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clue 1</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Clue 4</title>
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="clue-box">
-        <h1>Clue 1</h1>
+        <h1>Clue 4</h1>
         <div class="poem">
           <p>
-            "In front of the wooden realm I stand,<br />
-            Rooted in place, not by my hand.<br />
-            Crowds gather near, both day and night,<br />
-            As scents of chemicals fill my sight.<br />
-            Yet sweet rewards soften the air,<br />
-            With ice cream and juice, I do not despair.<br />
-            Events and gatherings make my purpose clear,<br />
-            What am I, standing patiently here?<br />
+            Let x be the year mentioned in the 9th line under conclusion on the
+            23rd page in the class 9th NCERT History Textbook. <br />
+            <br />
+            Let y be the year when the “Chapter 1 of class 9th NCERT History
+            Book” began. <br />
+            <br />
+            String s= ”gfEQ”. <br />
+            <br />
+            x^3 - y^3 - Hex of (s) = NUMBER <br />
+            <br />
+            Now connect the numbers to form a meaningful word using Numeric
+            Cipher.
           </p>
         </div>
         <input type="text" id="answer2" placeholder="Enter your answer" />
-        <button onclick="checkAnswer()">Submit</button>
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
       </div>
     </div>
@@ -42,7 +46,7 @@
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              question_number: 6,
+              question_number: 19,
               answer: userAnswer,
             }),
           }
