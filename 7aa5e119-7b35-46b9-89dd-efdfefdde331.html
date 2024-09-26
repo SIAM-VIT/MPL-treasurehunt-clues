@@ -21,6 +21,7 @@
         <input type="text" id="answer2" placeholder="Enter your answer" />
         <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message2" class="message"></p>
+        <p id="message3" class="message"></p>
       </div>
     </div>
 
@@ -46,7 +47,8 @@
           const data = await response.json();
           if (data.correct) {
             document.getElementById("message2").textContent =
-              "Correct! Advance to {{location}} for your next clue";
+              "Correct! Advance to the Tank for your next clue";
+            document.getElementById("message3").textContent = "Secret Clue: 51";
           } else {
             document.getElementById("message2").textContent =
               "Wrong answer. Try again!";

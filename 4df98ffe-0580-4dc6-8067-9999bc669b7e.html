@@ -30,6 +30,7 @@
         <input type="text" id="answer1" placeholder="Enter your answer" />
         <button onclick="checkAnswer()">Submit</button>
         <p id="message1" class="message"></p>
+        <p id="message3" class="message"></p>
       </div>
     </div>
 
@@ -53,7 +54,9 @@
           .then((data) => {
             if (data.correct) {
               document.getElementById("message1").textContent =
-                "Correct! Advance to {{location}} for your next clue";
+                "Correct! Advance to CS Hall for your next clue";
+              document.getElementById("message3").textContent =
+                "Secret Clue: 51";
             } else {
               document.getElementById("message1").textContent =
                 "Wrong answer. Try again!";

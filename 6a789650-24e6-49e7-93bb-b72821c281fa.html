@@ -28,6 +28,7 @@
         <input type="text" id="answer4" placeholder="Enter your answer" />
         <button onclick="checkAnswer()" class="button-3">Submit</button>
         <p id="message4" class="message"></p>
+        <p id="message3" class="message"></p>
       </div>
     </div>
 
@@ -53,7 +54,9 @@
           const data = await response.json();
           if (data.correct) {
             document.getElementById("message4").textContent =
-              "Correct! Advance to {{location}} for your next clue";
+              "Correct! Advance to Aavin tea shop for your next clue";
+            document.getElementById("message3").textContent =
+              "Secret Clue: 242";
           } else {
             document.getElementById("message4").textContent =
               "Wrong answer. Try again!";
