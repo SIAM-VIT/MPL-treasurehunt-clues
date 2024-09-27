@@ -31,7 +31,6 @@
         "destination": "/new-path",
         "permanent": true
       }
-    ],
-    "compression": true
+    ]
   }
   
