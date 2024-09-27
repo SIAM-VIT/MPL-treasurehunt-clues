@@ -55,11 +55,12 @@
           if (data.correct) {
             document.getElementById("message2").textContent =
               "Correct! Advance to KC Foods for your next clue";
-            document.getElementById("message3").textContent = "Secret Clue: 187";
+            document.getElementById("message3").textContent =
+              "Secret Clue: 187";
           } else {
             document.getElementById("message2").textContent =
               "Wrong answer. Try again!";
-            document.getElementById("message3").style.display = "none";
+            document.getElementById("message3").textContent = "";
           }
         } else {
           document.getElementById("message2").textContent =
