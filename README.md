@@ -1,15 +1,15 @@
 <p align="center"><img src="https://imgur.com/Vp4LWt0.png" width=160 title="SIAM-VIT" alt="SIAM-VIT"></a>
 </p>
 <div align="center">
-  <h3 align="center">2024 MPL Frontend Admin</h3>
+  <h3 align="center">2024 MPL Treasurehunt Frontend</h3>
 
   <p align="center">
     <a href="https://github.com/orgs/SIAM-VIT/repositories?q=mpl"><strong>Explore other MPL repositories</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SIAM-VIT/MPL-fe-admin/issues">Report Bug</a>
+    <a href="https://github.com/SIAM-VIT/MPL-treasurehunt-clues/issues">Report Bug</a>
     ·
-    <a href="https://github.com/SIAM-VIT/MPL-fe-admin/issues">Request Feature</a>
+    <a href="https://github.com/SIAM-VIT/MPL-treasurehunt-clues/issues">Request Feature</a>
   </p>
 </div>
 
