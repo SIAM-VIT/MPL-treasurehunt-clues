@@ -25,7 +25,13 @@
 
 ## About The Project
 
-This is the questions portal used by participants of MPL-2024, the flagship event of SIAM-VIT in VIT's tech fest, GraVITas.
+This is the questions portal used by participants of MPL-2024, the flagship event of SIAM-VIT in VIT's tech fest, GraVITas. The portal is built using ReactJS and is hosted on Vercel.
+
+### Built With
+
+- [ReactJS](https://reactjs.org/)
+
+# To view the clue webpages, simply download the HTML file and open it in your browser.
 
 ## Contributors
 
