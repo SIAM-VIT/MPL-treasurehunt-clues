@@ -1,0 +1,48 @@
+<!-- Clue 1b -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clue 1</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./assets/mpl-logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="clue-box">
+        <h1>Clue 1</h1>
+        <div class="clue-image">
+          <img src="./assets/KC_LAWN.jpg" alt="Clue 1 Image" class="clue-img" />
+        </div>
+
+        <input type="text" id="answer1" placeholder="Enter your answer" />
+        <button onclick="checkAnswer()" class="button-3">Submit</button>
+        <p id="message2" class="message"></p>
+        <p id="message3" class="message"></p>
+      </div>
+    </div>
+
+    <script>
+      function checkAnswer() {
+        const userAnswer = document.getElementById("answer1").value.trim();
+
+        if(userAnswer.toUpperCase().includes("KC")){
+          document.getElementById("message2").textContent =
+              "Correct! Advance to KC Lawn for your next clue";
+          document.getElementById("message3").textContent = "";
+        }else{
+          document.getElementById("message3").textContent =
+              "Wrong answer. Try again!";
+        }
+      }
+    </script>
+  </body>
+</html>
