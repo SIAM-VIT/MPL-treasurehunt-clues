@@ -70,6 +70,17 @@ This is the questions portal used by participants of MPL-2024, the flagship even
 				</a>
 			</p>
 		</td>
+		<td>
+		Pranshi Garg
+		<p align="center">
+			<img src = "https://avatars.githubusercontent.com/u/201887579?v=4" width="150" height="150" alt="Pranshi Garg">
+		</p>
+			<p align="center">
+				<a href = "https://github.com/PranshiGarg01">
+					<img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/>
+				</a>
+			</p>
+		</td>
 	</tr>
 </table>
 
